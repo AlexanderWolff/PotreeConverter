@@ -94,23 +94,53 @@ Options:
 
 
 ```
--h [ --help ]                           prints usage
--p [ --generate-page ] arg              Generates a ready to use web page with the given name.
--o [ --outdir ] arg                     output directory
--s [ --spacing ] arg                    Distance between points at root level. Distance halves each level.
--d [ --spacing-by-diagonal-fraction ] arg
-                                        Maximum number of points on the diagonal in the first level (sets spacing). spacing = diagonal / value
--l [ --levels ] arg                     Number of levels that will be generated. 0: only root, 1: root and its children, ...
--f [ --input-format ] arg               Input format. xyz: cartesian coordinates as floats, rgb: colors as numbers, i: intensity as number
---color-range arg
---intensity-range arg
---output-format arg                     Output format can be BINARY, LAS or LAZ. Default is BINARY
--a [ --output-attributes ] arg          can be any combination of RGB, INTENSITY, CLASSIFICATION and NORMAL. Default is RGB.
---scale arg                             Scale of the X, Y, Z coordinate in LAS and LAZ files.
---aabb arg                              Bounding cube as "minX minY minZ maxX maxY maxZ". If not provided it is automatically computed
---incremental                           Add new points to existing conversion
---overwrite                             Replace existing conversion at target directory
---source arg                            Source file. Can be LAS, LAZ, PTX or PLY
+  -h [ --help ]                         prints usage
+  -p [ --generate-page ] arg            Generates a ready to use web page with 
+                                        the given name.
+  -o [ --outdir ] arg                   output directory
+  -s [ --spacing ] arg                  Distance between points at root level. 
+                                        Distance halves each level.
+  -d [ --spacing-by-diagonal-fraction ] arg
+                                        Maximum number of points on the 
+                                        diagonal in the first level (sets 
+                                        spacing). spacing = diagonal / value
+  -l [ --levels ] arg                   Number of levels that will be 
+                                        generated. 0: only root, 1: root and 
+                                        its children, ...
+  -f [ --input-format ] arg             Input format. xyz: cartesian 
+                                        coordinates as floats, rgb: colors as 
+                                        numbers, i: intensity as number
+  --color-range arg
+  --intensity-range arg
+  --output-format arg                   Output format can be BINARY, LAS or 
+                                        LAZ. Default is BINARY
+  -a [ --output-attributes ] arg        can be any combination of RGB, 
+                                        INTENSITY and CLASSIFICATION. Default 
+                                        is RGB.
+  --scale arg                           Scale of the X, Y, Z coordinate in LAS 
+                                        and LAZ files.
+  --aabb arg                            Bounding cube as "minX minY minZ maxX 
+                                        maxY maxZ". If not provided it is 
+                                        automatically computed
+  --incremental                         Add new points to existing conversion
+  --overwrite                           Replace existing conversion at target 
+                                        directory
+  --source-listing-only                 Create a sources.json but no octree.
+  --projection arg                      Specify projection in proj4 format.
+  -q [ --quality ] arg                  Specify FAST, DEFAULT or NICE to 
+                                        trade-off between quality and 
+                                        conversion speed.
+  --list-of-files arg                   A text file containing a list of files 
+                                        to be converted.
+  --source arg                          Source file. Can be LAS, LAZ, PTX or 
+                                        PLY
+  --title arg                           Page title
+  --description arg                     Description to be shown in the page.
+  --edl-enabled                         Enable Eye-Dome-Lighting.
+  --show-skybox 
+  --material arg                        RGB, ELEVATION, INTENSITY, 
+                                        INTENSITY_GRADIENT, RETURN_NUMBER, 
+                                        SOURCE, LEVEL_OF_DETAIL
 ```
 
 Examples:
